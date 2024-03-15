@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import {useMediaQuery} from "react-responsive"
 import './App.css';
+import Inicio from "./compontes/inicio";
+import Login from "./compontes/login";
+import Mapas from "./compontes/mapas";
 
 function App() {
+  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {isMobile && (<Mapas />)}
     </div>
   );
 }
